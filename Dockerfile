@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
          vim \
          ca-certificates \
          libjpeg-dev \
+         wget \
          libpng-dev &&\
      rm -rf /var/lib/apt/lists/*
-
 
 RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  && \
      chmod +x ~/miniconda.sh && \
@@ -20,6 +20,9 @@ RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-la
      /opt/conda/bin/conda install -y -c pytorch magma-cuda100 && \
      /opt/conda/bin/conda clean -ya
 ENV PATH /opt/conda/bin:$PATH
+
+RUN wget https://github.com/NVIDIA/waveglow/blob/master/requirements.txt
+RUN pip install -r requirements.txt
 RUN pip install ninja
 # This must be done before pip so that requirements.txt is available
 WORKDIR /opt/pytorch
