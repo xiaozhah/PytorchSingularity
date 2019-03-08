@@ -1,8 +1,16 @@
-FROM pytorch/pytorch
+Bootstrap: docker
+From: pytorch/pytorch:latest
+ 
+%labels
+  Author Zhou Xiao
+  Version v1.0.0
+  build_date 2019 May 8
 
-RUN apt-get update && apt-get install -y wget zip unzip nano
-
-ENV PATH /opt/conda/bin:$PATH
-
-RUN wget https://github.com/NVIDIA/waveglow/blob/master/requirements.txt
-RUN pip install -r requirements.txt
+%post
+  apt-get update
+  apt-get upgrade -y
+  apt-get install -y tmux htop ranger tree ncdu python-pip wget zip unzip nano
+  apt-get autoclean
+ 
+  cd /tmp
+  /opt/conda/bin/pip install matplotlib==2.1.0 tensorflow numpy==1.13.3 inflect==0.2.5 librosa==0.6.0 scipy==1.0.0 tensorboardX==1.1 pillow
