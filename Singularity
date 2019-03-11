@@ -19,3 +19,4 @@ From: pytorch/pytorch:latest
   wget https://developer.nvidia.com/compute/machine-learning/nccl/secure/v2.4/prod/nccl-repo-ubuntu1604-2.4.2-ga-cuda10.0_1-1_amd64.deb
   apt-get update
   dpkg -i nccl-repo-ubuntu1604-2.4.2-ga-cuda10.0_1-1_amd64.deb
+  rm nccl-repo-ubuntu1604-2.4.2-ga-cuda10.0_1-1_amd64.deb
