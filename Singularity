@@ -3,8 +3,8 @@ From: pytorch/pytorch:latest
  
 %labels
   Author Zhou Xiao
-  Version v1.0.1
-  build_date 2019 May 8
+  Version v1.0.2
+  build_date 2019 May 11
 
 %post
   apt-get update
