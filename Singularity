@@ -13,3 +13,9 @@ From: pytorch/pytorch:latest
   apt-get autoclean
   
   /opt/conda/bin/pip install matplotlib==2.1.0 tensorflow numpy==1.13.3 inflect==0.2.5 librosa==0.6.0 scipy==1.0.0 tensorboardX==1.1 pillow
+
+  # install NCCL
+  cd /tmp
+  wget https://developer.nvidia.com/compute/machine-learning/nccl/secure/v2.4/prod/nccl-repo-ubuntu1604-2.4.2-ga-cuda10.0_1-1_amd64.deb
+  apt-get update
+  dpkg -i nccl-repo-ubuntu1604-2.4.2-ga-cuda10.0_1-1_amd64.deb
