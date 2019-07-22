@@ -12,4 +12,4 @@ From: pytorch/pytorch:latest
   apt-get install -y tmux htop ranger tree ncdu wget zip unzip nano
   apt-get autoclean
   
-  /opt/conda/bin/pip install matplotlib tensorflow==1.13.1 numpy==1.13.3 inflect==0.2.5 librosa==0.6.0 scipy tensorboardX==1.1 pillow
+  /opt/conda/bin/pip install matplotlib==2.1.0 tensorflow numpy==1.13.3 inflect==0.2.5 librosa==0.6.0 scipy==1.0.0 tensorboardX==1.1 pillow
